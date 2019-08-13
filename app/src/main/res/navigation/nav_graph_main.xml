@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/page1Fragment">
+
+    <fragment
+        android:id="@+id/page1Fragment"
+        android:name="cn.yuliang.navigation.demo.java.MainPage1Fragment"
+        android:label="这个是第一个界面"
+        tools:layout="@layout/navigation_flow_step_one_fragment">
+
+        <action
+            android:id="@+id/navigation_page1_next_button"
+            app:destination="@id/page2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/page2Fragment"
+        android:name="cn.yuliang.navigation.demo.java.MainPage2Fragment"
+        android:label="这个是第二个界面"
+        tools:layout="@layout/navigation_flow_step_two_fragment">
+        <!--<argument
+            android:name="flowStepNumber"
+            app:argType="integer"
+            android:defaultValue="1"/>-->
+
+        <action
+            android:id="@+id/navigation_page2_next_button"
+            app:destination="@id/nav_graph_page3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/nav_graph_page3"
+        app:startDestination="@id/page3Fragment">
+        <fragment
+            android:id="@+id/page3Fragment"
+            android:name="cn.yuliang.navigation.demo.java.MainPage3Fragment"
+            android:label="fragment_page3"
+            tools:layout="@layout/navigation_flow_step_three_fragment" />
+    </navigation>
+
+</navigation>
