@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun gotoKotlinDemo(v:View){
-
+        val intent = Intent(this,cn.yuliang.navigation.demo.kotlin.MainActivity::class.java)
+        startActivity(intent)
     }
 }

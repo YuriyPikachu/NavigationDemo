@@ -14,9 +14,17 @@
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+
             </intent-filter>
+
         </activity>
-        <activity android:name=".java.MainActivity" android:launchMode="singleTask"/>
+        <activity android:name=".java.MainActivity" android:launchMode="singleTask" >
+            <nav-graph android:value="@navigation/nav_graph_main" />
+        </activity>
+        <activity android:name=".kotlin.MainActivity" android:launchMode="singleTask" >
+            <!-- 为Activity设置<nav-graph/>标签 -->
+            <nav-graph android:value="@navigation/kotlin_nav_graph_main" />
+        </activity>
     </application>
 
 </manifest>

@@ -9,19 +9,22 @@ import cn.yuliang.navigation.demo.R;
 /**
  * @author YuLiang
  * update  2019-08-09
- * <a href="beiming@webuy.ai">Contact me</a>
+ * <a href="750749212@qq.com">Contact me</a>
  */
 public class MainActivity extends AppCompatActivity {
-    View fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_main);
-        fragment = findViewById(R.id.my_nav_host_fragment);
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
-        return Navigation.findNavController(fragment).navigateUp();
+        //app:defaultNavHost="true" 表示使用默认的导航host,
+        // 自动覆盖Activity的back按钮,不用再覆写[AppCompatActivity.onSupportNavigateUp()
+        return Navigation.findNavController(this,R.id.my_nav_host_fragment).navigateUp();
     }
 }
+
+
